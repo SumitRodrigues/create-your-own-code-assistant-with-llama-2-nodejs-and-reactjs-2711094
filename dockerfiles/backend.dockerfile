@@ -22,3 +22,7 @@ WORKDIR /app
 # Copy the node_modules and built files from the builder stage
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
