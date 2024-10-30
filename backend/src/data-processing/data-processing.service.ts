@@ -34,7 +34,7 @@ export class DataProcessingService {
     ];
     const exclude_globs = this.config.get<string[]>('exclude');
 
-    const loads = loaders.reduce((acc, cur)) => {
+    const loads = loaders.reduce((acc, cur) => {
       acc[cur] = (path) => new TextLoader(path);
       return acc;
     }, {});

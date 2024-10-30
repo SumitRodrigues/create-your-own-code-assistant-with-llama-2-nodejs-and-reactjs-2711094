@@ -6,6 +6,8 @@ import { ConfigModule } from '@nestjs/config';
 import { OllamaService } from './ollama/ollama.service';
 import { DataProcessingService } from './data-processing/data-processing.service';
 import { DatabaseService } from './database/database.service';
+import { RagService } from './rag/rag/rag.service';
+import { RetrieverService } from './rag/retriever/retriever.service';
 
 @Module({
   imports: [
@@ -15,6 +17,6 @@ import { DatabaseService } from './database/database.service';
     })
   ],
   controllers: [AppController],
-  providers: [AppService, OllamaService, DataProcessingService, DatabaseService],
+  providers: [AppService, OllamaService, DataProcessingService, DatabaseService, RagService, RetrieverService],
 })
 export class AppModule {}
